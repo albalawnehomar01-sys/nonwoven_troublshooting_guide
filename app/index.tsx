@@ -1,6 +1,6 @@
 import { router } from "expo-router";
 import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { Factory, BookOpen, History, ArrowRight } from "lucide-react-native";
+import { Factory, BookOpen, History, ClipboardCheck, ArrowRight } from "lucide-react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -41,6 +41,28 @@ export default function WelcomeScreen() {
               </Text>
               <View style={styles.cardArrow}>
                 <ArrowRight size={20} color="#3b82f6" />
+              </View>
+            </LinearGradient>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.card}
+            activeOpacity={0.8}
+            onPress={() => router.push("/(tabs)/production-track")}
+          >
+            <LinearGradient
+              colors={["#ffffff", "#ecfdf3"]}
+              style={styles.cardGradient}
+            >
+              <View style={[styles.cardIconContainer, { backgroundColor: "#22c55e20" }]}>
+                <ClipboardCheck size={32} color="#22c55e" />
+              </View>
+              <Text style={styles.cardTitle}>Production Track</Text>
+              <Text style={styles.cardDescription}>
+                Follow the core steps, checks, and KPIs for stable nonwoven production
+              </Text>
+              <View style={styles.cardArrow}>
+                <ArrowRight size={20} color="#22c55e" />
               </View>
             </LinearGradient>
           </TouchableOpacity>
@@ -92,7 +114,7 @@ export default function WelcomeScreen() {
 
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Reifenhäuser Reicofil Process Training
+            Reifenhäuser Reicofil Production Track
           </Text>
         </View>
       </LinearGradient>

@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Factory, BookOpen, History } from "lucide-react-native";
+import { Factory, BookOpen, History, ClipboardCheck } from "lucide-react-native";
 import React from "react";
 
 import Colors from "@/constants/colors";
@@ -17,6 +17,13 @@ export default function TabLayout() {
         options={{
           title: "Troubleshooting",
           tabBarIcon: ({ color }) => <Factory size={24} color={color} />,
+        }}
+      />
+      <Tabs.Screen
+        name="production-track"
+        options={{
+          title: "Production",
+          tabBarIcon: ({ color }) => <ClipboardCheck size={24} color={color} />,
         }}
       />
       <Tabs.Screen
